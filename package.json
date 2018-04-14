@@ -5,7 +5,7 @@
   "main": "lib/ecliptik.js",
   "scripts": {
     "build": "gulp",
-    "version": "npm run build && git add --all",
+    "version": "npm run build && git add --all .",
     "postversion": "git push && git push --tags"
   },
   "repository": {
