@@ -8,7 +8,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('bundle', function() {
-	return gulp.src('./src/*.js')
+	return gulp.src('./lib/*.js')
 	    .pipe(concat("ecliptik.js"))
 	    .pipe(gulp.dest('./dist/'));
 });
