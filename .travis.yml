@@ -1,0 +1,7 @@
+deploy:
+  provider: npm
+  email: office@ecliptik.org
+  api_key:
+    secure: LK02qU+DXAF9lysHi3xefwQC+oT6JYrfTiXwEGm51FMfxEQtPeglCUQHJF6xdAGr5tbOBdsEiYTEz+cW7PONC2Iso2UpXboZfBdEqYAtxkWQLgfylnjb2V49owBbMtTOmnacgBr30pApNKpC4V0h6I/ld/+I5rRbYYrY+eRi8wj0xtEemjjEEDNgCyofOo0ed8DMS0dp2rESoyeKRaI09OX4LAubu8rnlS8b+f4KGJ8nQryqPwZJMff5mIxH9ynUgStlA5ckWOQQk3O6cMoDcMT+Jmr2p7+YlgkXr05UlqUPLOm9JGTrYM1g43EJyao25jPDX038Y4WTb2fd7h17iI7u0BdqzBlTETFOMGCnZvKt2GuAEU0zeppHbMWI/13YwbRqgQUTMbcav5p1oV3zDneQ8+rHvmqTD5hV+aNTFjs5UTG6YQwlMhv8tzUX/H+/YJJs3LYoIvkx0qnRoy06YJpBHRNYEfGiDyZO9iReAOyk++xwIP1BNeGHtmAdVm+8JXa+X+oMRETb14Thd+pFla3lhB5ijgdAfBtjS+5UvVsgAFPv7pkYBpdd0oPkiv2Oc/uMQqzrTjpcA+b61rckjpC4cNVOeuIzVRiUCNzCZHtxV978j7HSVRYKZ3SeBM7QhcC9QtXzTTonofyqmXKQKFHDMAhlDU/CMgDNhPglsfY=
+  on:
+    tags: true
