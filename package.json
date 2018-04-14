@@ -26,6 +26,6 @@
     "gulp-rimraf": "^0.2.2"
   },
   "dependencies": {
-    "svgjs": "^2.6.2"
+    "svg.js": "^2.6.4"
   }
 }
