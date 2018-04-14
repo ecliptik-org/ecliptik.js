@@ -1,0 +1,31 @@
+{
+  "name": "ecliptik",
+  "version": "0.0.1",
+  "description": "javascript library for rendering ecliptiks",
+  "main": "lib/ecliptik.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecliptik-org/ecliptik.js.git"
+  },
+  "keywords": [
+    "ecliptik"
+  ],
+  "author": "ecliptik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecliptik-org/ecliptik.js/issues"
+  },
+  "homepage": "https://github.com/ecliptik-org/ecliptik.js#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-rimraf": "^0.2.2"
+  },
+  "dependencies": {
+    "svgjs": "^2.6.2"
+  }
+}

@@ -1,0 +1,6 @@
+./dist
+node_modules
+.gitignore
+.travis-ci.yml
+gulpfile.js
+package-lock.json
