@@ -1,12 +1,10 @@
 {
   "name": "ecliptik",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "javascript library for rendering ecliptiks",
-  "main": "lib/ecliptik.js",
+  "main": "dist/ecliptik.js",
   "scripts": {
-    "build": "gulp",
-    "version": "npm run build && git add --all .",
-    "postversion": "git push && git push --tags"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
