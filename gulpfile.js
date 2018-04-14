@@ -17,7 +17,7 @@ gulp.task('bundle', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('minify', function () {
+gulp.task('minify', ["bundle"], function () {
     return gulp.src('./dist/ecliptik.js')
         .pipe(minify({
             ext: {
@@ -28,5 +28,5 @@ gulp.task('minify', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task("build", ["clean", "bundle", "minify"]);
+gulp.task("build", ["bundle", "minify"]);
 gulp.task("default", ["build"]);

@@ -1,49 +1,48 @@
-if (typeof  $ === "undefined") {
-    $ = {};
-}
+if (typeof $ !== "undefined") {
+    console.log($);
+    $.fn.ecliptikSetup = function (_params) {
+        if ($(this).find(".canvas").length == 0) {
+            $(this).append("<div class=\"canvas\"></div>");
+        }
 
-$.fn.ecliptikSetup = function (_params) {
-    if ($(this).find(".canvas").length == 0) {
-        $(this).append("<div class=\"canvas\"></div>");
-    }
+        var canvas = $(this).find(".canvas");
+        if (canvas.find('svg').length) {
+            canvas.find('svg').remove();
+        }
+        var draw = SVG(canvas[0]);
 
-    var canvas = $(this).find(".canvas");
-    if (canvas.find('svg').length) {
-        canvas.find('svg').remove();
-    }
-    var draw = SVG(canvas[0]);
+        var width = $(this).width();
+        draw.size(width, width);
 
-    var width = $(this).width();
-    draw.size(width, width);
-
-    var params = new Params();
-    if (_params == null) {
-        console.log("no params for ecliptik");
-        _params = $(this).attr('ecliptik-params')
-        if (_params != null) {
-            if (_params.charAt(0) === '#') {
-                _params = _params.replace('#', '')
-            } else {
-                _params = JSON.parse(_params);
+        var params = new Params();
+        if (_params == null) {
+            console.log("no params for ecliptik");
+            _params = $(this).attr('ecliptik-params')
+            if (_params != null) {
+                if (_params.charAt(0) === '#') {
+                    _params = _params.replace('#', '')
+                } else {
+                    _params = JSON.parse(_params);
+                }
             }
         }
+
+        if (typeof _params === 'string') {
+            params.fromUrlParam(_params)
+        } else {
+            params.copyFrom(_params);
+        }
+
+        paint(draw, params.sex, params.gender, params.orientation, params.sexChange, params.acceptSexChange, params.noOrientation);
+
+        canvas.attr('title', params.fullDescription())
     }
 
-    if (typeof _params === 'string') {
-        params.fromUrlParam(_params)
-    } else {
-        params.copyFrom(_params);
+    $.fn.ecliptik = function (_params) {
+        $(this).each(function () {
+            $(this).ecliptikSetup(_params);
+        });
     }
-
-    paint(draw, params.sex, params.gender, params.orientation, params.sexChange, params.acceptSexChange, params.noOrientation);
-
-    canvas.attr('title', params.fullDescription())
-}
-
-$.fn.ecliptik = function (_params) {
-    $(this).each(function () {
-        $(this).ecliptikSetup(_params);
-    });
 }
 function Params() {
     this.sex = Math.random() * 2. - 1;
@@ -192,7 +191,7 @@ Params.prototype.fullDescription = function () {
     return result;
 };
 
-module.exports = Params;
+
 function radiusFromSex(sex, arcHeight) {
     sex = Math.abs(sex);
 
@@ -314,9 +313,8 @@ function paint(draw, sex, gender, orientation, sexChange, acceptSexChange, noOri
 }
 
 if (typeof window === "undefined") {
-    const params = require("./params.js");
     module.exports = {
         paint: paint,
-        params: params
+        Params: Params
     };
 }
